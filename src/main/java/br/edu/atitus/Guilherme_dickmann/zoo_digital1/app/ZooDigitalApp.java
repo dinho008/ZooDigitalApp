@@ -13,7 +13,7 @@ public class ZooDigitalApp {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("===== BEM-VINDO AO ZOO DIGITAL (vMaven) =====");
+        System.out.println("===== BEM-VINDO AO ZOO DIGITAL =====");
         
         while (true) {
             exibirMenu();
@@ -55,12 +55,12 @@ public class ZooDigitalApp {
     private static void exibirMenu() {
         System.out.println("\n--- MENU PRINCIPAL ---");
         System.out.println("1. Cadastrar Animal");
-        System.out.println("2. Listar Todos os Animais (Polimorfismo)");
+        System.out.println("2. Listar Todos os Animais");
         System.out.println("3. Listar Animais Corredores");
         System.out.println("4. Listar Animais Nadadores");
         System.out.println("5. Listar Animais Voadores");
         System.out.println("6. Listar Animais Predadores");
-        System.out.println("7. Exibir Total de Animais (Static)");
+        System.out.println("7. Exibir Total de Animais");
         System.out.println("0. Sair");
     }
 
@@ -94,14 +94,10 @@ public class ZooDigitalApp {
 
         String nome = lerString("Nome: ");
         int idade = lerInt("Idade: ");
-        
-        // Todas as classes de animais (Cachorro, Leao, etc.)
-        // também serão encontradas por causa do novo import.
         Animal novoAnimal = null;
 
         try {
             switch (tipo) {
-                // Mamíferos
                 case 1:
                     String raca = lerString("Raça: ");
                     novoAnimal = new Cachorro(nome, idade, raca);
@@ -115,7 +111,6 @@ public class ZooDigitalApp {
                 case 4:
                     novoAnimal = new Morcego(nome, idade);
                     break;
-                // Aves
                 case 5:
                     String corPenasPato = lerString("Cor das Penas: ");
                     novoAnimal = new Pato(nome, idade, corPenasPato);
@@ -132,7 +127,6 @@ public class ZooDigitalApp {
                     String corPenasAvestruz = lerString("Cor das Penas: ");
                     novoAnimal = new Avestruz(nome, idade, corPenasAvestruz);
                     break;
-                // Peixes
                 case 9:
                     novoAnimal = new Traira(nome, idade);
                     break;
@@ -145,7 +139,6 @@ public class ZooDigitalApp {
                 case 12:
                     novoAnimal = new PeixeVoador(nome, idade);
                     break;
-                // Répteis
                 case 13:
                     novoAnimal = new Cobra(nome, idade);
                     break;
